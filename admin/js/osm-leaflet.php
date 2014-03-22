@@ -63,9 +63,9 @@ function initialize() {
 		case "chantierscategorie" : // [admin] Edition de la catégorie de chantier
 									$zoomControl = "true";
 									$defaultCategorie = APLdb::getDefaultChantiersCategorie(JRequest::getVar('id', 10, 'get','int'));
-									$DEFAULT_GLAT = (isset($this->form->getField("glat")->value) ? $this->form->getField("glat")->value : $defaultCategorie->mapGlat);
-									$DEFAULT_GLNG = (isset($this->form->getField("glng")->value) ? $this->form->getField("glng")->value : $defaultCategorie->mapGlng);
-									$DEFAULT_ZOOM = (isset($this->form->getField("zoomLevel")->value) ? $this->form->getField("zoomLevel")->value : $defaultCategorie->zoomLevel);
+									$DEFAULT_GLAT = $defaultCategorie->mapGlat;
+									$DEFAULT_GLNG = $defaultCategorie->mapGlng;
+									$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
 									break;
 		case "mappemonde"	:		// [site] Consultation de la mappemonde
 									$defaultCategorie = APLdb::getDefaultChantiersCategorie(999);
@@ -78,20 +78,22 @@ function initialize() {
 										case "edit" :	// [admin] Édition d'un chantier
 														$defaultCategorie = APLdb::getDefaultChantiersCategorie(10);
 														$zoomControl = "true";
-														$DEFAULT_GLAT = (isset($this->form->getField("glat")->value) ? $this->form->getField("glat")->value : $defaultCategorie->mapGlat);
-														$DEFAULT_GLNG = (isset($this->form->getField("glng")->value) ? $this->form->getField("glng")->value : $defaultCategorie->mapGlng);
-														$DEFAULT_ZOOM = (isset($this->form->getField("zoomLevel")->value) ? $this->form->getField("zoomLevel")->value : $defaultCategorie->zoomLevel);
+														$DEFAULT_GLAT = $defaultCategorie->mapGlat;
+														$DEFAULT_GLNG = $defaultCategorie->mapGlng;
+														$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
 														break;
 										default		:	// [site] Consultation d'un chantier
 														$defaultCategorie = APLdb::getDefaultChantiersCategorie(999);
 														$zoomControl = "false";
-														$DEFAULT_GLAT = (isset($this->chantier->glat) ? $this->chantier->glat : $defaultCategorie->mapGlat);
-														$DEFAULT_GLNG = (isset($this->chantier->glng) ? $this->chantier->glng : $defaultCategorie->mapGlng);
+														$DEFAULT_GLAT = $defaultCategorie->mapGlat;
+														$DEFAULT_GLNG = $defaultCategorie->mapGlng;
 														$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
 														break;
 									}
 									break;
 		default				:		// par défaut
+									$defaultCategorie = APLdb::getDefaultChantiersCategorie(999);
+									$zoomControl = "true";
 									$DEFAULT_GLAT = $defaultCategorie->mapGlat;
 									$DEFAULT_GLNG = $defaultCategorie->mapGlng;
 									$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
@@ -107,11 +109,17 @@ function initialize() {
 		$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
 	}*/
 	?>
-	
+	var glat = <?php echo $DEFAULT_GLAT ?>;
+	var glng = <?php echo $DEFAULT_GLNG; ?>;
+	var zoom = <?php echo $DEFAULT_ZOOM; ?>;
+	var zoomControl = <?php echo $zoomControl; ?>;
+	// if current page contains glat/glng input, use their values to center the map
+	if (elementExist('jform_glat')) { glat = document.getElementById('jform_glat').value; }
+	if (elementExist('jform_glng')) { glng = document.getElementById('jform_glng').value; }
 	var mapOptions = {
-		zoom: <?php echo $DEFAULT_ZOOM; ?>,
-		center: [<?php echo $DEFAULT_GLAT ?>, <?php echo $DEFAULT_GLNG; ?>],
-		zoomControl: <?php echo $zoomControl; ?>,
+		zoom: zoom,
+		center: [glat, glng],
+		zoomControl: zoomControl,
 		worldCopyJump: true
 	};
 

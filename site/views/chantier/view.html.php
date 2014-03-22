@@ -42,7 +42,7 @@ class aplViewchantier extends JView
     {
         $doc = JFactory::getDocument();
         //$doc->addStyleSheet('components/com_apl/css/chantier.css');
-        //$doc->addScript('components/com_apl/js/fonctions.js');
+        $doc->addScript('components/com_apl/js/fonctions.js');
 		$params = JComponentHelper::getParams('com_apl');
 		
 		switch ($params->get("map_provider")) {
