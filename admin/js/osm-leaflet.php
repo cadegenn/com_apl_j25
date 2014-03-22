@@ -81,9 +81,6 @@ function initialize() {
 														$DEFAULT_GLAT = (isset($this->form->getField("glat")->value) ? $this->form->getField("glat")->value : $defaultCategorie->mapGlat);
 														$DEFAULT_GLNG = (isset($this->form->getField("glng")->value) ? $this->form->getField("glng")->value : $defaultCategorie->mapGlng);
 														$DEFAULT_ZOOM = (isset($this->form->getField("zoomLevel")->value) ? $this->form->getField("zoomLevel")->value : $defaultCategorie->zoomLevel);
-														echo("console.log('glat = ".$DEFAULT_GLAT."');");
-														echo("console.log('glng = ".$DEFAULT_GLNG."');");
-														echo("console.log('this = ");var_dump($this);echo("');");
 														break;
 										default		:	// [site] Consultation d'un chantier
 														$defaultCategorie = APLdb::getDefaultChantiersCategorie(999);
