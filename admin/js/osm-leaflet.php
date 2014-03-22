@@ -52,8 +52,6 @@ function initialize() {
 	<?php // init defaults
 	$currentView = JRequest::getVar('view', '', 'get','string');
 	$currentLayout = JRequest::getVar('layout', '', 'get','string');
-	echo("console.log('currentView = ".$currentView."');");
-	echo("console.log('currentLayout = ".$currentLayout."');");
 	switch (strtolower($currentView)) {
 		case "chantiers" :			// [site] Consultation de la liste des chantiers
 									$defaultCategorie = APLdb::getDefaultChantiersCategorie(JRequest::getVar('id', 10, 'get','int'));
