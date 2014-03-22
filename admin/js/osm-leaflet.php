@@ -1,14 +1,34 @@
 <?php
-
-// No direct access
-defined('_JEXEC') or die('Restricted access');
-JHtml::_('behavior.tooltip');
+/* 
+ *  Copyright (C) 2012-2014 DEGENNES Charles-Antoine <cadegenn@gmail.com>
+ *  com_apl is a joomla! 2.5 component [http://www.apasdeloup.org]
+ *  
+ *  This file is part of com_apl.
+ * 
+ *     com_apl is free software: you can redistribute it and/or modify
+ *     it under the terms of the Affero GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ * 
+ *     com_apl is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     Affero GNU General Public License for more details.
+ * 
+ *     You should have received a copy of the Affero GNU General Public License
+ *     along with com_apl.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
 
 // @brief OpenStreetMap, layer Leaflet
 // @url http://wiki.openstreetmap.org/wiki/Using_OpenStreetMap
 // @url http://wiki.openstreetmap.org/wiki/Deploying_your_own_Slippy_Map
 // @url http://wiki.openstreetmap.org/wiki/OpenLayers
 // @url http://leafletjs.com/examples/quick-start.html
+
+// No direct access
+defined('_JEXEC') or die('Restricted access');
+JHtml::_('behavior.tooltip');
 
 $params = JComponentHelper::getParams('com_apl');
 $API_KEY=$params->get("cloudmade_apikey");
