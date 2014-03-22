@@ -23,6 +23,8 @@
 	. importv2chantiers: ne pas importer les fichiers attachés (fiche d'inscription, etc...) R#2014.03.12
 	projet NetBeans
 	. ajout de la licence Affero GPL
+	js:
+	. osm-leaflet.php: added function localiser() to localize a marker by pressing a button
 
 @version 0.1.10 - @date 2014.03.17
 	site:

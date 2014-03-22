@@ -358,5 +358,21 @@ function updateMarkerControls(glatLng) {
 	}
 }
 
-
+/**
+ * @brief	localiser()	localize a marker on the map
+ * @param	(float)		glat : latitude
+ * @param	(float)		glng : longitude
+ * 
+ * @warn	anchor with name/id map has to exist : <a name='map' id='map'></a>
+ */
+function localiser(glat, glng) {
+	// center map on the provided glat/glng
+	map.setView([glat, glng]);
+	// searching for a marker at this location
+	var marker = getMarker([glat, glng]);
+	// fire click event
+	marker.openPopup();
+	// gently scroll to map
+	var myFx = new Fx.Scroll(window).toElement('map', 'y');
+}
 </script>
