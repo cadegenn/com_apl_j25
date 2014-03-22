@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	addrulepath="/administrator/components/com_apl/models/rules"
+>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="nom"
+			type="text"
+			label="COM_APL_NOM_LABEL"
+			description="COM_APL_CHANTIER_NOM_DESC"
+			size="40"
+			class="inputbox validate-nom"
+			validate="nom"
+			required="true"
+			default=""
+		/>
+		<field
+			name="catid"
+			type="category"
+			extension="com_apl"
+			class="inputbox"
+			default=""
+			label="COM_APL_CATEGORIE_LABEL"
+			description="COM_APL_CHANTIER_CATEGORIE_DESC"
+			required="true"
+		>
+			<option value="0">JOPTION_SELECT_CATEGORY</option>
+		</field>
+	</fieldset>
+</form>

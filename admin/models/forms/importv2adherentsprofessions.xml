@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	addrulepath="/administrator/components/com_apl/models/rules"
+>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="categorie"
+			type="text"
+			label="COM_APL_CATEGORIE_LABEL"
+			description="COM_APL_ADHERENTSORIGINES_CATEGORIE_DESC"
+			size="40"
+			class="inputbox validate-nom"
+			validate="nom"
+			required="true"
+			default=""
+		/>
+		<field
+			name="label"
+			type="text"
+			label="COM_APL_LABEL_LABEL"
+			description="COM_APL_ADHERENTSORIGINES_LABEL_DESC"
+			size="100"
+			class="inputbox"
+			default=""
+		/>
+		<field
+			name="enable"
+			type="select"
+			label="COM_APL_ENABLE_LABEL"
+			description="COM_APL_ADHERENTSORIGINES_ENABLE_DESC"
+			size="100"
+			class="inputbox"
+			default=""
+		/>
+	</fieldset>
+</form>

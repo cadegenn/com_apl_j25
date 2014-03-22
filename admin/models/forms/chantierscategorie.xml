@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+	addrulepath="/administrator/components/com_apl/models/rules"
+>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="nom"
+			type="text"
+			label="COM_APL_NOM_LABEL"
+			description="COM_APL_CHANTIER_CATEGORIES_TEXT_DESC"
+			size="40"
+			class="inputbox validate-nom"
+			required="true"
+			default=""
+		/>
+		<field
+			name="link"
+			type="text"
+			label="COM_APL_CHANTIERSCATEGORIES_LINK_LABEL"
+			description="COM_APL_CHANTIER_CATEGORIES_LINK_DESC"
+			class="text"
+			default=""
+		/>
+		<field name="published" type="list" label="JSTATUS"
+				description="JFIELD_PUBLISHED_DESC" class="inputbox"
+				filter="intval" size="1" default="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field
+			name="mapGlat"
+			type="hidden"
+			label="COM_APL_GLAT_LABEL"
+			description="COM_APL_GLAT_DESC"
+			size="20"
+		/>
+		<field
+			name="mapGlng"
+			type="hidden"
+			label="COM_APL_GLNG_LABEL"
+			description="COM_APL_GLNG_DESC"
+			size="20"
+		/>
+		<field
+			name="zoomLevel"
+			type="integer" first="1" last="20" step="1"
+			label="COM_APL_CHANTIERSCATEGORIES_ZOOMLEVEL_LABEL"
+			description="COM_APL_CHANTIERSCATEGORIES_ZOOMLEVEL_DESC"
+			class="inputbox"
+			default=""
+		/>
+		<field
+			name="mapType"
+			type="list"
+			label="COM_APL_CHANTIERSCATEGORIES_MAPTYPE_LABEL"
+			description="COM_APL_CHANTIERSCATEGORIES_MAPTYPE_DESC"
+			class="inputbox"
+			size="1" default="1"
+		>
+			<option value="HYBRID">COM_APL_MAPTYPE_HYBRID</option>
+			<option value="ROADMAP">COM_APL_MAPTYPE_ROADMAP</option>
+			<option value="SATELLITE">COM_APL_MAPTYPE_SATELLITE</option>
+			<option value="TERRAIN">COM_APL_MAPTYPE_TERRAIN</option>
+		</field>
+	</fieldset>
+</form>

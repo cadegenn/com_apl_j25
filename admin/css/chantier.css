@@ -1,0 +1,68 @@
+/*
+ * Fieldset
+ */
+fieldset.adminform {
+	/*display: table;*/
+}
+fieldset.adminform div.tr {
+	width: 100%;
+	/*display: table-row;*/
+}
+fieldset.adminform div.th {
+	/*min-width: 15%;
+	width: 15%;*/
+	float: left;
+	clear: left;
+	/*display: table-cell;*/
+	max-width: 20%;
+}
+fieldset.adminform div.td {
+	/*display: table-cell;*/
+	margin-left: 20%;
+	padding: 0 2% 2% 2%;
+	
+}
+
+fieldset.adminform textarea, fieldset.adminform input:not([type="checkbox"]) {
+	/*min-width: 500px;*/
+	width: 100% ! important;
+}
+fieldset.adminform input.date {
+	width: 20% ! important;
+}
+fieldset.adminform input.prix {
+	width: 10% ! important;
+	text-align: right;		/* on affiche les chiffres alignés à droite */
+}
+fieldset.adminform span {
+	color: navy;
+	/*vertical-align: middle;*/
+	text-align: middle;
+}
+fieldset.adminform span.help {
+	font-size: smaller;
+	color: grey;
+}
+fieldset.adminform label {
+	float: none ! important;
+	clear: none ! important;
+	display: inline;
+	vertical-align: middle;
+	text-align: middle;
+}
+fieldset input, li > fieldset label, fieldset textarea, fieldset select, fieldset img, fieldset button {
+	float: none ! important;
+	vertical-align: middle;         /* pour aligner les images correctement */
+}
+
+ul.adminformlist-inline li {
+	display: inline;
+}
+
+fieldset.radio {
+	display: inline-block;
+	float: none ! important;
+}
+fieldset.radio input[type="radio"] {
+	width: auto ! important;
+}

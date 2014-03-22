@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+ 
+	<name>COM_APL</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	<creationDate>May 2012</creationDate>
+	<author>Charles-Antoine DEGENNES</author>
+	<authorEmail>cadegenn@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>GPL v3</license>
+	<!--  The version string is recorded in the components table -->
+	<version>0.1.11</version> <!-- à modifier aussi dans admin/language/**-??/**-??.com_apl.ini -->
+	<!-- The description is optional and defaults to the name -->
+	<description>COM_APL_COMPONENT_DESCRIPTION</description>
+	
+	<scriptfile>install.script.php</scriptfile>
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update> <!-- Runs on update; New in 2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+ 
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>apl.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+		<folder>language</folder>
+	</files>
+	
+	<!--<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.com_apl.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.com_apl.ini</language>
+	</languages>-->
+	
+	<!--<media destination="com_apl" folder="media">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+	</media>-->
+	
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link="option=com_apl" img="components/com_apl/images/ico-16x16/apl.ico">COM_APL</menu>
+		<submenu>
+			<menu view="chantiers" img="components/com_apl/images/ico-16x16/apl.ico">COM_APL_SUBMENU_CHANTIERS</menu>
+			<!--<menu view="config" img="components/com_apl/images/ico-16x16/page-gear-icon.png">COM_APL_SUBMENU_CONFIGURATION</menu>-->
+			<menu view="imports" img="components/com_apl/images/ico-16x16/import-icon.png">COM_APL_SUBMENU_IMPORT</menu>
+		</submenu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>apl.php</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<!-- css repository -->
+			<folder>css</folder>
+			<!-- images repository -->
+			<folder>images</folder>
+			<!-- javascript repository -->
+			<folder>js</folder>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+			<!-- tables files section -->
+			<folder>tables</folder>
+			<!-- models files section -->
+			<folder>models</folder>
+			<!-- views files section -->
+			<folder>views</folder>
+			<!-- controllers files section -->
+			<folder>controllers</folder>
+			<!-- helpers files section -->
+			<folder>helpers</folder>
+			<!-- rules files section -->
+			<folder>rules</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_apl.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_apl.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_apl.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_apl.sys.ini</language>
+		</languages>
+	</administration>
+ 
+</extension>

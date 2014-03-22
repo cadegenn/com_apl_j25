@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	permet d'affficher un nouveau type de lien de menu dans la liste
+
+	le texte est à mettre dans admin/language/fr-FR/fr-FR.com_apl.sys.ini !!
+-->
+<metadata>
+	<layout title="COM_APL_CHANTIER_VIEW_DEFAULT_TITLE">
+		<message>COM_APL_CHANTIER_VIEW_DEFAULT_DESC</message>
+	</layout>
+	<fields
+		name="request"
+		addfieldpath="/administrator/components/com_apl/models/fields"
+	>
+		<fieldset name="request">
+			<field
+				name="id"
+				type="chantiers"
+				label="COM_APL_CHANTIERS_FIELD_CHANTIER_LABEL"
+				description="COM_APL_CHANTIERS_FIELD_CHANTIER_DESC"
+			/> <!-- le contenu de ce champs est défini là ==> /administrator/components/com_apl/models/fields/chantiers.php -->
+		</fieldset>
+	</fields>
+</metadata>

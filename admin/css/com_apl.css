@@ -1,0 +1,26 @@
+/* 
+    Document   : com_apl
+    Created on : 15 sept. 2012, 19:35:40
+    Author     : charly
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.icon-32-import {
+	background-image: url(../images/ico-128x128/import-icon.png);
+	background-size: 32px;
+}
+.icon-48-categories, .icon-48-apl {
+	background-image: url(../images/ico-48x48/apl.png);
+}
+
+.blue {
+	color: navy;
+}
+.grey {
+	color: silver;
+}

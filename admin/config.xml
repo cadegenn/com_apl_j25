@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="map"
+		label="COM_APL_MAP_SETTINGS_LABEL"
+		description="COM_APL_MAP_SETTINGS_DESC"
+	>
+		<field
+			name="map_provider"
+			type="list"
+			label="COM_APL_MAP_PROVIDER_LABEL"
+			description="COM_APL_MAP_PROVIDER_DESC"
+			class="inputbox"
+			size="1" default="1"
+		>
+			<option value="none">COM_APL_MAP_PROVIDER_NONE_LABEL</option>
+			<option value="googlemap-v3">COM_APL_MAP_PROVIDER_GOOGLEMAPV3_LABEL</option>
+			<option value="osm-leaflet">COM_APL_MAP_PROVIDER_OPENSTREETMAP_LEAFLET_LABEL</option>
+		</field>
+		<field
+			name="googlemap_apikey"
+			type="text"
+			label="COM_APL_GOOGLEMAP_APIKEY_LABEL"
+			description="COM_APL_GOOGLEMAP_APIKEY_DESC"
+			size="100"
+			default=""
+		/>
+		<field
+			name="cloudmade_apikey"
+			type="text"
+			label="COM_APL_CLOUDMADE_APIKEY_LABEL"
+			description="COM_APL_CLOUDMADE_APIKEY_DESC"
+			size="100"
+			default=""
+		/>
+	</fieldset>
+	<fieldset
+			name="users"
+			label="COM_ADH_USERS_SETTINGS_LABEL"
+			description="COM_ADH_USERS_SETTINGS_DESC"
+	>
+		<field  name="auth_method" type="list" 
+			label="COM_ADH_USERS_AUTHMETHOD_LABEL" description="COM_ADH_USERS_AUTHMETHOD_DESC" class="inputbox"
+			filter="intval" size="1" default="1"
+		>
+			<option value="0">COM_ADH_USERS_AUTHMETHOD_NONE</option>
+			<option value="1">COM_ADH_USERS_AUTHMETHOD_JOOMLA</option>
+			<option value="2">COM_ADH_USERS_AUTHMETHOD_ADH</option>
+			<option value="999">COM_ADH_USERS_AUTHMETHOD_CUSTOM</option>
+		</field>
+		<field
+			name="auth_dbhost" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBHOST_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBHOST_DESC"
+		/>
+		<field
+			name="auth_dbusername" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBUSERNAME_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBUSERNAME_DESC"
+		/>
+		<field
+			name="auth_dbpasswd" type="password"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBPASSWD_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DBPASSWD_DESC"
+		/>
+		<field name="auth_dbname" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DATABASE_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_DATABASE_DESC"
+		/>
+		<field name="auth_tablename" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_TABLE_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_TABLE_DESC"
+		/>
+		<field name="auth_usernamefield" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_USERNAMEFIELD_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_USERNAMEFIELD_DESC"
+		/>
+		<field name="auth_passwordfield" type="text"
+			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_PASSWORDFIELD_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_PASSWORDFIELD_DESC"
+		/>
+	</fieldset>
+	<fieldset
+		name="imports"
+		label="COM_APL_IMPORTTABLES_SETTINGS_LABEL"
+		description="COM_APL_IMPORTTABLES_SETTINGS_DESC"
+	>
+		<field
+			name="database"
+			type="text"
+			label="COM_APL_IMPORTTABLES_SETTINGS_DATABASE_LABEL"
+			description="COM_APL_IMPORTTABLES_SETTINGS_DATABASE_DESC"
+			default=""
+		/>
+		<field
+			name="db_host"
+			type="text"
+			label="COM_APL_IMPORTTABLES_SETTINGS_DBHOST_LABEL"
+			description="COM_APL_IMPORTTABLES_SETTINGS_DBHOST_DESC"
+			default=""
+		/>
+		<field
+			name="db_username"
+			type="text"
+			label="COM_APL_IMPORTTABLES_SETTINGS_DBUSERNAME_LABEL"
+			description="COM_APL_IMPORTTABLES_SETTINGS_DBUSERNAME_DESC"
+			default=""
+		/>
+		<field
+			name="db_passwd"
+			type="password"
+			label="COM_APL_IMPORTTABLES_SETTINGS_DBPASSWD_LABEL"
+			description="COM_APL_IMPORTTABLES_SETTINGS_DBPASSWD_DESC"
+			default=""
+		/>
+	</fieldset>
+</config>

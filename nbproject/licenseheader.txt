@@ -1,0 +1,24 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix} Copyright (C) 2012-${date?date?string("yyyy")} ${project.organization!user}
+${licensePrefix} com_apl is a joomla! 2.5 component [http://www.apasdeloup.org]
+${licensePrefix} 
+${licensePrefix} This file is part of com_apl.
+${licensePrefix}
+${licensePrefix}    com_apl is free software: you can redistribute it and/or modify
+${licensePrefix}    it under the terms of the Affero GNU General Public License as published by
+${licensePrefix}    the Free Software Foundation, either version 3 of the License, or
+${licensePrefix}    (at your option) any later version.
+${licensePrefix}
+${licensePrefix}    com_apl is distributed in the hope that it will be useful,
+${licensePrefix}    but WITHOUT ANY WARRANTY; without even the implied warranty of
+${licensePrefix}    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+${licensePrefix}    Affero GNU General Public License for more details.
+${licensePrefix}
+${licensePrefix}    You should have received a copy of the Affero GNU General Public License
+${licensePrefix}    along with com_apl.  If not, see <http://www.gnu.org/licenses/>.
+${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>

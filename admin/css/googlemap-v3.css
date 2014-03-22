@@ -1,0 +1,14 @@
+/* 
+    Document   : googlemap-v3
+    Created on : 16 sept. 2012, 21:35:40
+    Author     : charly
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#map_canvas {
+	width: 100%;
+	height: 500px;
+	margin: 0;
+	box-shadow: 1px 1px 4px 2px rgba(0,0,0 ,0.7);
+}

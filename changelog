@@ -1,0 +1,87 @@
+@TODO
+	. simplifier et améliorer les API google/leaflet
+	=> updateCurrentMarker(): passer les valeurs en paramètre
+	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
+	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
+	REUNION du 12/03/2014
+	-> browser : ouvrir automatiquement au bon endroit pour les photos, fiches, etc...
+	-> browser : ne pas limiter la taille des fichiers uploadés
+	-> changer le nom APL en VPN
+
+	-> rechercher l'histoire du nom de domaine
+	-> acheter le nouveau nom de domaine
+	-> nouveau logo sur l'ancien site
+	-> faire un lien "partager sur facebook"
+	-> virer "a pas de loup" du site
+
+@version 0.1.11 - @date
+	sql:
+	. #__apl_chantiers: ajouter le champs adresse R#2014.03.12
+	admin:
+	. chantier: garder le champ "ou ?" pour une adresse "poétique", et ajouter un champ adresse exacte pour google R#2014.03.12
+	. chantier: le champs adresse positionne le marker sur la carte, et non le champs "ou ?" R#2014.03.12
+	. importv2chantiers: ne pas importer les fichiers attachés (fiche d'inscription, etc...) R#2014.03.12
+	projet NetBeans
+	. ajout de la licence Affero GPL
+
+@version 0.1.10 - @date 2014.03.17
+	site:
+	. chantiers: si la date du jour > date_fin ==> affiche le chantier comme [TERMINÉ] R#2014.03.12
+	. chantier: si la date du jour > date_fin ==> affiche le chantier comme [TERMINÉ] R#2014.03.12
+	. importv2chantiers: différencier les chantiers déjà importer des nouveaux R#2014.03.12
+	. importv2articles: différencier les articles déjà importer des nouveaux R#2014.03.12
+	languages:
+	. fr-FR: ajout d'une description pour différencer date_debut de publish_up et date_fin de publish_down R#2014.03.12
+
+@version 0.1.9 - @date 2014.03.12
+	admin:
+	. chantiers: colonnes sortables + ajout colonne date de début de chantier -> OK
+	. chantier: intégration OpenStreetMap avec le layer leaflet
+	. js/osm-leaflet.php: intégration de nominatim de OpenStreetMap pour le service de reverse-geocoding
+	site:
+	. intégration OpenStreetMap avec le layer leaflet
+	=> chantiers -> OK
+	=> mappemonde -> OK
+	=> chantier -> OK
+
+@version 0.1.8 - @date 2013.03.21
+	admin:
+	. importV2articles: (grosses) optimisations de l'importation
+
+@version 0.1.7 - @date 2013.03.20
+	admin:
+	. sql: ajout d'un champs "countrycode" à la table "chantiers"
+	. importV2chantiers: geocoding et reverse geocoding lors de l'importation pour fixer correctement les champs "coutrycode" et "pays"
+	. chantiers: ajout du filtre "pays" en utilisant le countrycode
+	. chantiers: ajout du filtre "published"
+	. chantiers: ajout d'un bouton "mettre à la corbeille"
+	. catégoriesChantiers: ajout d'un bouton "mettre à la corbeille"
+	. apl: ajout du bouton préférences dès la page d'acceuil
+
+@version 0.1.6 - @date 2013.05.15
+	admin:
+	. ajout du filtre "catégories" sur la page des chantiers
+
+@version 0.1.5 - @date 2013.02.09
+	. ajout des boutons 'apply', 'save2new' et 'save2copy'
+	. ajout 'sous_titre' dans la DB
+
+@version 0.1.4 - @date 2012.10.31
+	. suppression des tables adherents_origines et adherents_professions
+
+@version 0.1.3
+	. fix bug sur table #__apl_chantiers_categories : glat -> mapGlat; glng -> mapGlng
+	. suppression du contenu de la table #__apl_chantiers_categories à l'installation
+	. suppression des menus d'importation des origines et des professions -> création d'un component dédié à la gestion des adhérents d'asso
+
+@version 0.1.2
+	. fix bug de chantier->id sur la mappemonde
+	. ajout d'un lien dans le h3 de l'info-bulle des cartes
+
+@version 0.1.1
+	. Ajout importation des articles de l'ancien site
+	. Ajout du champs "sous_titre" à la table chantier + intégration aux différentes vues et éditions
+
+@version 0.1.0
+	. 1ère version utilisable comprenant l'importation de données de l'ancien site + création et affichage des chantiers
+
