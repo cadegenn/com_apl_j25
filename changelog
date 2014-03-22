@@ -14,7 +14,7 @@
 	-> faire un lien "partager sur facebook"
 	-> virer "a pas de loup" du site
 
-@version 0.1.11 - @date
+@version 0.1.11 - @date 2014.03.22
 	sql:
 	. #__apl_chantiers: ajouter le champs adresse R#2014.03.12
 	admin:
