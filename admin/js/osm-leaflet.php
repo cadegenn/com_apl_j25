@@ -129,17 +129,17 @@ function initialize() {
 		$DEFAULT_ZOOM = $defaultCategorie->zoomLevel;
 	}*/
 	?>
-	var glat = <?php echo $DEFAULT_GLAT ?>;
-	var glng = <?php echo $DEFAULT_GLNG; ?>;
-	var zoom = <?php echo $DEFAULT_ZOOM; ?>;
-	var zoomControl = <?php echo $zoomControl; ?>;
+	var default_glat = <?php echo $DEFAULT_GLAT ?>;
+	var default_glng = <?php echo $DEFAULT_GLNG; ?>;
+	var default_zoom = <?php echo $DEFAULT_ZOOM; ?>;
+	var default_zoomControl = <?php echo $zoomControl; ?>;
 	// if current page contains glat/glng input, use their values to center the map
-	if (elementExist('jform_glat')) { glat = document.getElementById('jform_glat').value; }
-	if (elementExist('jform_glng')) { glng = document.getElementById('jform_glng').value; }
+	if (elementExist('jform_glat')) { default_glat = document.getElementById('jform_glat').value; }
+	if (elementExist('jform_glng')) { default_glng = document.getElementById('jform_glng').value; }
 	var mapOptions = {
-		zoom: zoom,
-		center: [glat, glng],
-		zoomControl: zoomControl,
+		zoom: default_zoom,
+		center: [default_glat, default_glng],
+		zoomControl: default_zoomControl,
 		worldCopyJump: true
 	};
 
@@ -160,12 +160,12 @@ function initialize() {
 }
 
 /**
- * @briefs	Center current map to lag,lng coordinates
+ * @brief	centerMap()	Center current map to lag,lng coordinates
  * @param	(float)		glat	latitude
  * @param	(float)		glng	longitude
  */
 function centerMap(glat, glng) {
-	map.setView(glat, glng);
+	map.setView([glat, glng]);
 }
 
 /**
