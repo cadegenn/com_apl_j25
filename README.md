@@ -5,7 +5,7 @@ DESCRIPTION
 -----------
 
 com_apl is a joomla! 2.5 component to help members of french association
-"A Pas de Loup" to manage the association.
+"Volontaires Pour la Nature" to manage the association.
 
 It can GoogleMap API v3 or CloudMade Leaflet to display maps.
 
