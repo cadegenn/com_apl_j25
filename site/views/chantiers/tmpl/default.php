@@ -1,4 +1,35 @@
 <?php
+/**
+ * @package		Volontaires Pour la Nature <http://www.apasdeloup.org>
+ * @subpackage	com_apl_j25
+ * @brief		Joomla! 2.5 core component
+ * @copyright	Copyright (C) 2010 - 2014 DEGENNES Charles-Antoine <cadegenn@gmail.com>
+ * @license		Affero GNU General Public License version 3 or later; see LICENSE.txt
+ * 
+ * @TODO		replace hard-coded calendar img with a div with class='calendar'
+ */
+
+/** 
+ *  Copyright (C) 2012-2014 DEGENNES Charles-Antoine <cadegenn@gmail.com>
+ *  com_apl is a joomla! 2.5 component [http://www.apasdeloup.org]
+ *  
+ *  This file is part of com_apl.
+ * 
+ *     com_apl is free software: you can redistribute it and/or modify
+ *     it under the terms of the Affero GNU General Public License as published by
+ *     the Free Software Foundation, either version 3 of the License, or
+ *     (at your option) any later version.
+ * 
+ *     com_apl is distributed in the hope that it will be useful,
+ *     but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *     Affero GNU General Public License for more details.
+ * 
+ *     You should have received a copy of the Affero GNU General Public License
+ *     along with com_apl.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
@@ -71,7 +102,7 @@ window.onload = loadScript;
 		<?php endif; ?>
 		<br />
 		<span><?php echo $item->lieu; ?></span><br />
-		<img src='<?php echo $this->baseurl."/templates/".$template; ?>/images/ico_16x16/date.png' alt='date' /><?php echo APLFunctions::read_date_as_human($item->date_debut, $item->date_fin, $item->date_exacte); ?> <br />
+		<img src='<?php echo $this->baseurl."/templates/".$template; ?>/images/ico_16x16/calendar.png' alt='date' /><?php echo APLFunctions::read_date_as_human($item->date_debut, $item->date_fin, $item->date_exacte); ?> <br />
 		<?php if ($item->complet) : ?>
 			<span class='complet'>[COMPLET]</span>
 		<?php endif; ?>

@@ -80,7 +80,7 @@ window.addEvent('domready',function(){
 });
 </script>
 
-<?php if ((strtotime($item->date_fin) > 0) and (strtotime($item->date_fin) <= strtotime("now"))) : ?>
+<?php if ((strtotime($this->chantier->date_fin) > 0) and (strtotime($this->chantier->date_fin) <= strtotime("now"))) : ?>
 	<!-- CHANTIER TERMINÉ -->
 	<div class='finished'>( TERMINÉ )</div>
 <?php endif; ?>
