@@ -103,7 +103,7 @@ abstract class APLFunctions {
 	 * @return string The converted string
 	 */
 	function br2nl($string){ 
-		$return=eregi_replace('<br[[:space:]]*/?[[:space:]]*>',chr(13).chr(10),$string); 
+		$return=preg_replace('/<br[[:space:]]*/?[[:space:]]*>/i',chr(13).chr(10),$string); 
 		return $return; 
 	}
 	
@@ -119,10 +119,10 @@ abstract class APLFunctions {
 		//stripslashes($string);
 		$string = stripslashes(html_entity_decode(stripslashes($string)));
 		// convertir les &rsquo et &lsquo en '
-		$string = eregi_replace('&rsquo;',"'",$string);
-		$string = eregi_replace('&lsquo;',"'",$string);
-		$string = eregi_replace('&#039;',"'",$string);
-		$string = eregi_replace('Ê¼',"'",$string);
+		$string = preg_replace('/&rsquo;/i',"'",$string);
+		$string = preg_replace('/&lsquo;/i',"'",$string);
+		$string = preg_replace('/&#039;/i',"'",$string);
+		$string = preg_replace('/Ê¼/i',"'",$string);
 		// on converti la chaine en UTF-8
 		//$string = mb_convert_encoding($string,'UTF-8');
 		// remplacer les <br /> et retranscrire en HTML
