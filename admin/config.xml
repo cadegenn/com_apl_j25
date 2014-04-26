@@ -34,7 +34,7 @@
 			default=""
 		/>
 	</fieldset>
-	<fieldset
+	<!--<fieldset
 			name="users"
 			label="COM_ADH_USERS_SETTINGS_LABEL"
 			description="COM_ADH_USERS_SETTINGS_DESC"
@@ -72,7 +72,7 @@
 		<field name="auth_passwordfield" type="text"
 			label="COM_ADH_USERS_AUTHMETHOD_SETTINGS_PASSWORDFIELD_LABEL" description="COM_ADH_USERS_AUTHMETHOD_SETTINGS_PASSWORDFIELD_DESC"
 		/>
-	</fieldset>
+	</fieldset>-->
 	<fieldset
 		name="imports"
 		label="COM_APL_IMPORTTABLES_SETTINGS_LABEL"

@@ -45,7 +45,15 @@ abstract class APLFunctions {
 	function read_date_as_human($date_debut, $date_fin, $date_exacte=false) {
 		// les dates sont au format "YYY-MM-DD hh:mm:ss"
 		//setlocale(LC_ALL, "fr_FR");
-		setlocale(LC_ALL, array('fr_FR', 'fr_FR.utf8', 'fr_FR.iso88591', 'fr_FR.iso885915@euro', 'fr_FR@euro'));
+		setlocale(LC_ALL, array('fr_FR', 'fr_FR.iso88591', 'fr_FR.iso885915@euro', 'fr_FR.utf8', 'fr_FR@euro'));
+		// if we are on localhost, set encoding to UTF-8
+		// if we are hosted (@OVH at current time), set encoding to iso-8859-1
+		// it is necessary to display properly months with accents
+		if ($_SERVER['HTTP_HOST'] == "localhost") {
+			$ENCODING = 'UTF-8';
+		} else {
+			$ENCODING = 'iso-8859-1';
+		}
 		
 		$mois_debut = intval(date("m", strtotime($date_debut)));
 		$mois_fin = intval(date("m", strtotime($date_fin)));
@@ -56,7 +64,8 @@ abstract class APLFunctions {
 			$debut = "Du ".$jour_debut." ".strftime("%B",mktime(0, 0, 0, $mois_debut));
 			$fin = $jour_fin." ".strftime("%B",mktime(0, 0, 0, $mois_fin));
 			//return strtolower(htmlentities($debut." au ".$fin, ENT_COMPAT, 'iso-8859-1', false));
-			return strtolower(htmlentities($debut." au ".$fin, ENT_COMPAT, 'UTF-8', false));
+			//return strtolower(htmlentities($debut." au ".$fin, ENT_COMPAT, 'UTF-8', false));
+			return strtolower(htmlentities($debut." au ".$fin, ENT_COMPAT, $ENCODING, false));
 		} else {
 			// cas toute l'ann&eacute;e
 			if ($mois_debut == 1 and $mois_fin == 12 and $jour_debut == 1 and $jour_fin == 31) { return"Toute l'ann&eacute;e"; }
@@ -81,7 +90,7 @@ abstract class APLFunctions {
 			//echo($fin);
 			//if (20 <= $jour_fin) { echo("&agrave; fin " . date("d F",mktime(0, 0, 0, $mois_fin, $jour_fin))." "); }
 			//return strtolower(htmlentities($debut." &agrave; ".$fin, ENT_COMPAT, 'iso-8859-1', false));
-			return strtolower(htmlentities($debut." &agrave; ".$fin, ENT_COMPAT, 'UTF-8', false));
+			return strtolower(htmlentities($debut." &agrave; ".$fin, ENT_COMPAT, $ENCODING, false));
 		}
 	}
 

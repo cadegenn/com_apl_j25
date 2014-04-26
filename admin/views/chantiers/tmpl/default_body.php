@@ -40,7 +40,7 @@ $userId         = $user->get('id');
 			<?php echo $item->lieu; ?>
 		</td>
 		<td>
-			<?php echo $item->pays; ?> <!--<small>[<?php echo $item->countrycode; ?>]</small>-->
+			<?php echo $item->pays; ?> <small>[<?php echo $item->countrycode; ?>]</small>
 		</td>
 		<td>
 			<?php echo $item->id; ?>

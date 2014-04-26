@@ -12,20 +12,24 @@
 	-> view/chantier: afficher "autre fichier" et fix bug $this->chantier->fiche_info en $this->chantier->fiche_inscription	[OK]
 		-> Informations complémentaires	[OK]
 	-> regarder upload_max_size et éventuellement le changer
-	-> view/chantiers : filtre / catégorie puis par pays ne marche pas
-	-> site: date des chantiers qui ne s'affichent pas toujours
+	-> view/chantiers : filtre / catégorie puis par pays ne marche pas [OK] -> en fait, c'est à cause du code pays qui n'est pas renseigné dans la base (problèmes d'importation et que google map marche pas)
+																			-> soit refaire une importation, soit ouvrir chaque chantier et l'enregistrer (ce qui calcule le code pays et l'enregistre correctement dans la base)
+	-> site: date des chantiers qui ne s'affichent pas toujours [OK]
 	-> faire un lien "partager sur facebook"
 
 	REUNION du 12/03/2014
-	-> browser : ouvrir automatiquement au bon endroit pour les photos, fiches, etc...
+	-> browser : ouvrir automatiquement au bon endroit pour les photos, fiches, etc...  [pas possible]
 	-> browser : ne pas limiter la taille des fichiers uploadés
 	-> changer le nom APL en VPN
-
-	-> rechercher l'histoire du nom de domaine
-	-> acheter le nouveau nom de domaine
+	-> rechercher l'histoire du nom de domaine [OK]
+	-> acheter le nouveau nom de domaine [OK]
 	-> virer "a pas de loup" du site
 
-@version 0.1.13 - @date
+@version 0.1.13 - @date 2014.04.26
+	admin:
+	. parametres: suppression de la page USERS (qui ne servait à rien)
+	. apl: affichage du numéro de version dans le footer de la page d'acceuil du composant
+	. functions: read_date_as_human(): choix de l'encodage des dates en fonction du serveur (localhost = UTF-8, ovh = ISO-8859-1)
 	site:
 	. views/chantier: fix fiche_inscription
 	. views/chantier: ajout fiche_custom

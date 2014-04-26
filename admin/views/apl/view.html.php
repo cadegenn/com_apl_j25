@@ -17,8 +17,8 @@ class aplViewapl extends JView
 	function display($tpl = null) 
 	{
 		// Get data from the model
-		$items = $this->get('Items');
-		$pagination = $this->get('Pagination');
+		//$items = $this->get('Items');
+		//$pagination = $this->get('Pagination');
  
 		// Check for errors.
 		if (count($errors = $this->get('Errors'))) 
@@ -27,8 +27,10 @@ class aplViewapl extends JView
 			return false;
 		}
 		// Assign data to the view
-		$this->items = $items;
-		$this->pagination = $pagination;
+		//$this->items = $items;
+		//$this->pagination = $pagination;
+		$this->component = $this->get('Component');
+		$this->manifest = json_decode($this->component->manifest_cache);
  
 		// Set the toolbar
 		$this->addToolBar();
