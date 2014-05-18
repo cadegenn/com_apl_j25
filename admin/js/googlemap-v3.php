@@ -165,7 +165,7 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 	var funcName = arguments.callee.toString();
 	funcName = funcName.substr('function '.length);				// trim off "function "
 	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+	console.log(funcName+"()");
 
 	if (markerExists(new google.maps.LatLng(glat, glng))) {
 		return getMarker(new google.maps.LatLng(glat, glng));
@@ -225,10 +225,13 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
  * Méthode pour vérifier si un marker existe sur la carte
  * 
  * @param	coord	coordonnées au format (glat,glng)
- * 
  * @return	true si le marker existe, false autrement
  */
 function markerExists(coord) {
+	var funcName = arguments.callee.toString();
+	funcName = funcName.substr('function '.length);				// trim off "function "
+	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+	console.log(funcName+"()");
 	//if (debug) { debug.innerHTML += dump(markers,0,1); }
 	//if (markers.length == 0) { return false; }
 	for (var i = 0; i < markers.length; i++) {
@@ -242,22 +245,21 @@ function markerExists(coord) {
 /**
  * Méthode pour obtenir un marker dans la liste des markers créés
  * 
- * @param	coord	coordonnées au format google.maps.LatLng
- * 
- * @return	marker	si un marker est trouvé, sinon false
+ * @param	(google.maps.LatLng)	lat lng coordinates
+ * @return	(object)				marker if found | false otherwise
  */
 function getMarker(gLatLng) {
 	var funcName = arguments.callee.toString();
 	funcName = funcName.substr('function '.length);				// trim off "function "
 	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+	console.log(funcName+"()");
 	//console.log(funcName+"(): markers.length = " + markers.length);
 	for (var i = 0; i < markers.length; i++) {
-		//console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
+		console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
 		//if (debug) { debug.innerHTML += dump(markers[i],0,1); }
 		//if (m.getPosition().lat() !== marker.getPosition().lat())
 		if (markers[i].getPosition().equals(gLatLng)) {
-			//console.log(funcName+"(): YES => return marker["+i+"]");
+			console.log(funcName+"(): YES => return marker["+i+"]");
 			return markers[i];
 		}
 	}
@@ -419,7 +421,7 @@ function updateCurrentMarker() {
 	var funcName = arguments.callee.toString();
 	funcName = funcName.substr('function '.length);				// trim off "function "
 	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+	console.log(funcName+"()");
 	/*
 	address = document.getElementById('jform_lieu').value;
 	categorie = document.getElementById('jform_catid').value;
@@ -428,17 +430,18 @@ function updateCurrentMarker() {
 	*/
 	//alert("ça marche");
 	//updateMarker(marker, address, categorie, titre, desc, null, true, true);
-	current_glat = document.getElementById('jform_glat').innerHTML;
-	current_glng = document.getElementById('jform_glng').innerHTML;
-	new_address = document.getElementById('jform_lieu').value;
+	current_glat = document.getElementById('jform_glat').value.valueOf();
+	current_glng = document.getElementById('jform_glng').value.valueOf();
+	new_address = document.getElementById('jform_adresse').value;
 	new_titre = document.getElementById('jform_nom').value;
 	new_desc = document.getElementById('jform_actions').value.replace(/\n/g,"<br \/>");
-	
+	console.log("%s(): current_glat = %f / current_glng = %f", funcName, current_glat, current_glng);
 	// goecode adress into valid glat/glng
 	//new_glatLng = geocodeAddress(new_address);
 	//console.log(funcName+"():" + new_glatLng);
-	
-	var currentMarker = getMarker(new google.maps.LatLng(current_glat, current_glng));
+	var coords = new google.maps.LatLng(current_glat, current_glng);
+	console.log("%s(): %o", funcName, coords);
+	var currentMarker = getMarker(coords);
 	if (currentMarker == false) {
 		if (new_address != "") {
 			// translation en glatlng pour afficher le marker

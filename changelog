@@ -4,26 +4,12 @@
 	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
 	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
 
-	REUNION du 16/04/2014
-	-> redirection vers http://next.apasdeloup.org	[OK]
-	-> autoriser www.volontairesnature.org à accéder à l'APIKEY	[OK]
-	-> supprimer le chantier mal enregistrer "Rénovation d'un sentier"
-	-> importation de chantier, supprimer le contenu des champs de fichiers attachés
-	-> view/chantier: afficher "autre fichier" et fix bug $this->chantier->fiche_info en $this->chantier->fiche_inscription	[OK]
-		-> Informations complémentaires	[OK]
-	-> regarder upload_max_size et éventuellement le changer
-	-> view/chantiers : filtre / catégorie puis par pays ne marche pas [OK] -> en fait, c'est à cause du code pays qui n'est pas renseigné dans la base (problèmes d'importation et que google map marche pas)
-																			-> soit refaire une importation, soit ouvrir chaque chantier et l'enregistrer (ce qui calcule le code pays et l'enregistre correctement dans la base)
-	-> site: date des chantiers qui ne s'affichent pas toujours [OK]
-	-> faire un lien "partager sur facebook"
-
-	REUNION du 12/03/2014
-	-> browser : ouvrir automatiquement au bon endroit pour les photos, fiches, etc...  [pas possible]
-	-> browser : ne pas limiter la taille des fichiers uploadés
-	-> changer le nom APL en VPN
-	-> rechercher l'histoire du nom de domaine [OK]
-	-> acheter le nouveau nom de domaine [OK]
-	-> virer "a pas de loup" du site
+@version 0.1.14 - @date 2014.05.18
+	admin:
+	. googlemap-v3.php: updateCurrentMarker(): le champs adresse update la position du marker
+	. googlemap-v3.php: updateCurrentMarker(): fix bug du marker dupliqué à chaque changement d'adresse
+	site:
+	. apl.xml: reparamétrage du dossier 'language' pour la partie 'site'
 
 @version 0.1.13 - @date 2014.04.26
 	admin:

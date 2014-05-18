@@ -8,9 +8,9 @@
 	<authorEmail>cadegenn@gmail.com</authorEmail>
 	<authorUrl></authorUrl>
 	<copyright>Copyright Info</copyright>
-	<license>GPL v3</license>
+	<license>AGPL v3</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.1.13</version> <!-- à modifier aussi dans admin/language/**-??/**-??.com_apl.ini -->
+	<version>0.1.14</version> <!-- à modifier aussi dans admin/language/**-??/**-??.com_apl.ini -->
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_APL_COMPONENT_DESCRIPTION</description>
 	
@@ -41,13 +41,12 @@
 		<filename>controller.php</filename>
 		<folder>views</folder>
 		<folder>models</folder>
-		<folder>language</folder>
 	</files>
 	
-	<!--<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.com_apl.ini</language>
-		<language tag="fr-FR">fr-FR/fr-FR.com_apl.ini</language>
-	</languages>-->
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_apl.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.com_apl.ini</language>
+	</languages>
 	
 	<!--<media destination="com_apl" folder="media">
 		<filename>index.html</filename>

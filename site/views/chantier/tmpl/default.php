@@ -138,7 +138,7 @@ if ((is_dir(getcwd().'/'.$PHOTOS_DIR))) { // and (mt_rand(0,1))) {
 	<div class='detail_chantier'><h3><?php echo JText::_('COM_APL_CHANTIER_REGISTER'); ?></h3> T&eacute;l&eacute;chargez la <a target='_blank' href='<?php echo($this->baseurl."/".$this->chantier->fiche_inscription); ?>'>fiche d'inscription</a> <sup><img src='<?php echo($this->baseurl."/templates/".$template); ?>/images/ico_16x16/ico_new_window.png' alt='ico_new_window' /></sup> associ&eacute;e &agrave; ce chantier.</div>
 <?php endif; ?>
 <?php if ($this->chantier->fiche_custom != "") : ?>
-	<div class='detail_chantier'><h3><?php echo JText::_('COM_APL_CHANTIER_CUSTOM'); ?></h3> Encore plus d'infos <a target='_blank' href='<?php echo($this->baseurl."/".$this->chantier->fiche_custom); ?>'>ici</a> <sup><img src='<?php echo($this->baseurl."/templates/".$template); ?>/images/ico_16x16/ico_new_window.png' alt='ico_new_window' /></sup> associ&eacute;e &agrave; ce chantier.</div>
+	<div class='detail_chantier'><h3><?php echo JText::_('COM_APL_CHANTIER_CUSTOM'); ?></h3> Encore plus d'infos <a target='_blank' href='<?php echo($this->baseurl."/".$this->chantier->fiche_custom); ?>'>ici</a> <sup><img src='<?php echo($this->baseurl."/templates/".$template); ?>/images/ico_16x16/ico_new_window.png' alt='ico_new_window' /></sup>.</div>
 <?php endif; ?>
 
 <pre><?php //var_dump($this); ?></pre>

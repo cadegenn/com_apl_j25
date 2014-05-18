@@ -48,7 +48,8 @@ class aplViewchantier extends JView
 		// add breadcrumbs
 		$app    = JFactory::getApplication();
 		$pathway = $app->getPathway();
-		$pathway->addItem(html_entity_decode($this->chantier->nom,ENT_QUOTES, 'UTF-8'), 'index.php?option=com_apl&view=chantier&id='.$this->chantier->id.'&Itemid='.JRequest::getVar('Itemid', 0, 'get','int'));
+		//$pathway->addItem(html_entity_decode($this->chantier->nom,ENT_QUOTES, 'UTF-8'), 'index.php?option=com_apl&view=chantier&id='.$this->chantier->id.'&Itemid='.JRequest::getVar('Itemid', 0, 'get','int'));
+		$pathway->addItem(JText::_('COM_APL_CHANTIER_DETAILS'));
 		// Load styleSheet & scripts
         $this->addDocStyleAndScripts();
 		
