@@ -1,7 +1,7 @@
 REUNION du 14/05/2014
 =====================
 -> language : COM_APL_CHANTIER_CUSTOM	[OK]
--> base de données -> ajouter une tag "chantier VPN"
+-> base de données -> ajouter un tag "chantier VPN"
 -> détail du chantier -> afficher la griffe VPN avec tooltip + lien vers la FAQ "qu'est qu'un chantier VPN ?"
 -> fil d'ariane -> afficher "détail du chantier" au lieu du nom du chantier		[OK]
 -> édition du chantier -> bug lorsqu'on écrit une adresse, il créé un nouveau marker à chaque fois	[OK]

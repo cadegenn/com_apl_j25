@@ -4,6 +4,12 @@
 	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
 	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
 
+@version 0.1.15 - @date
+	admin:
+	sql:
+	. ajouter le champ "vpn" à la table chantiers
+	site:
+
 @version 0.1.14 - @date 2014.05.18
 	admin:
 	. googlemap-v3.php: updateCurrentMarker(): le champs adresse update la position du marker
