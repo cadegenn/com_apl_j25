@@ -35,8 +35,6 @@ class aplViewchantier extends JView
 
 	function display($tpl = null) {
 		// Assign data to the view
-		//$this->msg = $this->get('Msg');
-		//$this->msg = "APL : Chantiers";
 		$this->chantier = $this->get('Chantier');	// ==> /components/com_apl/models/chantier.php
  
 		// Check for errors.

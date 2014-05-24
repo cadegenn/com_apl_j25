@@ -80,17 +80,21 @@ window.addEvent('domready',function(){
 });
 </script>
 
-<?php if ((strtotime($this->chantier->date_fin) > 0) and (strtotime($this->chantier->date_fin) <= strtotime("now"))) : ?>
-	<!-- CHANTIER TERMINÉ -->
-	<div class='finished'>( TERMINÉ )</div>
+<?php if ($this->chantier->vpn) : ?>
+	<!-- CHANTIER VPN -->
+	<div class='tag_vpn'><a href="#"><img src="<?php echo JURI::base(); ?>components/com_apl/images/ico-32x32/apl.png" alt="<?php echo JText::_('COM_APL_CHANTIER_VPN_TOOLTIP'); ?>" title="<?php echo JText::_('COM_APL_CHANTIER_VPN_TOOLTIP'); ?>" /></a></div>
 <?php endif; ?>
 <?php if ($this->chantier->test) : ?>
 	<!-- CHANTIER TEST -->
-	<div class='mission_test'>MISSION TEST</div>
+	<div class='tag_test'>MISSION TEST</div>
+<?php endif; ?>
+<?php if ((strtotime($this->chantier->date_fin) > 0) and (strtotime($this->chantier->date_fin) <= strtotime("now"))) : ?>
+	<!-- CHANTIER TERMINÉ -->
+	<div class='tag_finished'>( TERMINÉ )</div>
 <?php endif; ?>
 <?php if ($this->chantier->complet) : ?>
 	<!-- CHANTIER COMPLET -->
-	<div class='complet'>( COMPLET )</div>
+	<div class='tag_complet'>( COMPLET )</div>
 <?php endif; ?>
 
 

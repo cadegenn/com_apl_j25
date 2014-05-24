@@ -6,8 +6,9 @@
 
 @version 0.1.15 - @date
 	admin:
+	. chantier: ajout du champs "vpn" à la page d'édition du chantier
 	sql:
-	. ajouter le champ "vpn" à la table chantiers
+	. ajout du champs "vpn" à la table chantiers
 	site:
 
 @version 0.1.14 - @date 2014.05.18

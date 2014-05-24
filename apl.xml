@@ -40,6 +40,7 @@
 		<filename>apl.php</filename>
 		<filename>controller.php</filename>
 		<folder>views</folder>
+		<folder>images</folder>
 		<folder>models</folder>
 	</files>
 	
