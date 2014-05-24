@@ -200,6 +200,18 @@
 			default=""
 		/>
 		<field
+			name="vpn"
+			type="radio"
+			label="COM_APL_CHANTIER_VPN_LABEL"
+			description="COM_APL_CHANTIER_VPN_DESC"
+			class="radiobox"
+			default="0"
+			filter="integer"
+		>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field
 			name="test"
 			type="radio"
 			label="COM_APL_CHANTIER_TEST_LABEL"

@@ -77,11 +77,6 @@ window.onload = loadScript;
 window.addEvent('domready',function(){
 	<?php switch ($params->get("map_provider")) :
 		case 'googlemap-v3'	: ?>
-			/*var script = document.createElement("script");
-			script.type = "text/javascript";
-			script.src = "http://maps.googleapis.com/maps/api/js?key=<?php echo $GOOGLEMAP_API_KEY; ?>&sensor=false&callback=initialize";
-			document.body.appendChild(script);*/
-			//loadScript();
 		<?php break;
 		case 'osm-leaflet'	: ?>
 			initialize();
@@ -179,6 +174,9 @@ window.addEvent('domready',function(){
 
 						<li><?php echo $this->form->getLabel('publish_down'); ?>
 						<?php echo $this->form->getInput('publish_down'); ?></li>
+						
+						<li><?php echo $this->form->getField("vpn")->label; ?>
+							<?php echo $this->form->getField("vpn")->input; ?></li>
 						
 						<li><?php echo $this->form->getField("test")->label; ?>
 							<?php echo $this->form->getField("test")->input; ?></li>
