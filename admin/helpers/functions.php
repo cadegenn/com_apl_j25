@@ -42,7 +42,7 @@ abstract class APLFunctions {
 	 * @param type $date_exacte
 	 * @return string
 	 */
-	function read_date_as_human($date_debut, $date_fin, $date_exacte=false) {
+	public static function read_date_as_human($date_debut, $date_fin, $date_exacte=false) {
 		// les dates sont au format "YYY-MM-DD hh:mm:ss"
 		//setlocale(LC_ALL, "fr_FR");
 		setlocale(LC_ALL, array('fr_FR', 'fr_FR.iso88591', 'fr_FR.iso885915@euro', 'fr_FR.utf8', 'fr_FR@euro'));
@@ -101,7 +101,7 @@ abstract class APLFunctions {
 	 * @param string $text
 	 * @return string	converted string
 	 */
-	function mynl2br($text) { 
+	public static function mynl2br($text) { 
 		return strtr($text, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />')); 
 	}
 	/**
@@ -111,7 +111,7 @@ abstract class APLFunctions {
 	 * @param string The string to convert
 	 * @return string The converted string
 	 */
-	function br2nl($string){ 
+	public static function br2nl($string){ 
 		$return=preg_replace('/<br[[:space:]]*\/?[[:space:]]*>/i',chr(13).chr(10),$string); 
 		return $return; 
 	}
@@ -122,7 +122,7 @@ abstract class APLFunctions {
 	 * @param string La chaine a traiter
 	 * @return string La chaine convertie
 	 */
-	function escapeString($string) {
+	public static function escapeString($string) {
 		// d'abord, on unEscape pour partir sur une base propre
 		//$string = APLFunctions::unEscapeString($string);
 		//stripslashes($string);
@@ -148,7 +148,7 @@ abstract class APLFunctions {
 	 * @param	string	La chaine a traiter
 	 * @return	string	La chaine convertie
 	 */
-	function unEscapeString($string) {
+	public static function unEscapeString($string) {
 		//stripslashes($string);
 		// PHP >= 5.4
 		//$string = html_entity_decode(stripslashes($string), ENT_QUOTES | ENT_SUBSTITUTE | ENT_DISALLOWED | ENT_HTML5, 'UTF-8');
@@ -166,7 +166,7 @@ abstract class APLFunctions {
 	 * @param	string	$pattern	masque de recherche
 	 * @return	string	chemin de l'image
 	 */
-	function getRandomImage($dir, $pattern="") {
+	public static function getRandomImage($dir, $pattern="") {
 		$i = 0;
 		$photos = array();	
 		if ($handle = opendir($dir)) {
@@ -210,7 +210,7 @@ abstract class APLFunctions {
 	 * @param string $chaine		La chaine à convertir
 	 * @return	string	$replaced	La chaine convertie
 	 */
-	function removeAccents($chaine) {
+	public static function removeAccents($chaine) {
 		$search = explode(",","ç,æ,œ,á,é,í,ó,ú,à,è,ì,ò,ù,ä,ë,ï,ö,ü,ÿ,â,ê,î,ô,û,å,e,i,ø,u");
 		$replace = explode(",","c,ae,oe,a,e,i,o,u,a,e,i,o,u,a,e,i,o,u,y,a,e,i,o,u,a,e,i,o,u");
 		return str_replace($search, $replace, $chaine);
