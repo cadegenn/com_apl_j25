@@ -7,7 +7,6 @@
 		<field 
 			name="faq-tag-vpn" type="modal_article" 
 			label="COM_APL_SETTINGS_SITE_TAGVPN_ARTICLE_LABEL" description="COM_APL_SETTINGS_SITE_TAGVPN_ARTICLE_DESC"
-			required="true"
 		/>
 	</fieldset>
 	<fieldset
