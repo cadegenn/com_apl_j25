@@ -35,7 +35,8 @@ $userId         = $user->get('id');
 			<?php echo JHtml::_('jgrid.published', $item->enable, $i, 'chantiersCategories.', 0, 'cb', '', ''); ?>
 		</td>
 		<td>
-			<?php echo $item->link; ?>
+			<?php // old database does not have link field ?>
+			<?php //echo $item->link; ?>
 		</td>
 		<td>
 			<?php echo $item->glat; ?>
