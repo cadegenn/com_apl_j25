@@ -15,7 +15,7 @@ class aplController extends JController
 	 *
 	 * @return void
 	 */
-	function display($cachable = false) 
+	function display($cachable = false, $urlparams = false)
 	{
 		// set default view if not set
 		//JRequest::setVar('view', JRequest::getCmd('view', 'apl'));
@@ -23,7 +23,7 @@ class aplController extends JController
 		$input->set('i', $input->getCmd('view', 'apl'));
  
 		// call parent behavior
-		parent::display($cachable);
+		parent::display($cachable, $urlparams);
 		
 		//aplHelper::addSubmenu('chantiers');	// => admin/helpers/chantiers.php
 	}
