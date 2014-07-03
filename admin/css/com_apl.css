@@ -24,3 +24,8 @@ root {
 .grey {
 	color: silver;
 }
+
+/* override default template */
+div.current label {
+	margin-top: 0 ! important;
+}

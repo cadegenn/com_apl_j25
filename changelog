@@ -4,12 +4,15 @@
 	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
 	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
 
-@version 0.1.15 - @date
+@version 0.1.15 - @date 2014.07.03
 	admin:
 	. chantier: ajout du champs "vpn" à la page d'édition du chantier
+	. config: ajout d'un onglet "site" qui permet de configurer l'article cible du tag VPN
+	. importV2chantiers: vidage des champs fiche_*
 	sql:
 	. ajout du champs "vpn" à la table chantiers
 	site:
+	. chantier: enrobage de tous les div détails_chantier par un div 'main_content'
 
 @version 0.1.14 - @date 2014.05.18
 	admin:

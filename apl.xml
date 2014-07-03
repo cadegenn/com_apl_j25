@@ -75,6 +75,7 @@
 			<filename>controller.php</filename>
 			<!-- css repository -->
 			<folder>css</folder>
+			<folder>elements</folder>
 			<!-- images repository -->
 			<folder>images</folder>
 			<!-- javascript repository -->

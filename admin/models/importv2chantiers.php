@@ -156,6 +156,7 @@ class aplModelImportV2Chantiers extends JModelList
 		// pour afficher le debug, supprimer la redirection dans --> controllers/importv2chantiers.php
 		//echo("<pre>".var_dump($cid)."</pre>");
 		$db = JFactory::getDbo();
+		$application = JFactory::getApplication();
 		
 		foreach ($cid as $key => $id) {
 			// on initialise les objets
@@ -183,9 +184,11 @@ class aplModelImportV2Chantiers extends JModelList
 				$chantier->glng = (float)$row->Glng;
 				$chantier->nom = APLFunctions::escapeString($chantier->nom);
 				$chantier->lieu = APLFunctions::escapeString($chantier->lieu);
-				if (class_exists("GMAPv3")) {
-					$chantier->countrycode = GMAPv3::getCountryFromLatLng($chantier->glat, $chantier->glng)->short_name;
-				}
+				//if ($chantier->countrycode == "") {
+					if (class_exists("GMAPv3")) {
+						$chantier->countrycode = GMAPv3::getCountryFromLatLng($chantier->glat, $chantier->glng)->short_name;
+					}
+				//}
 				if ($chantier->pays == "") {
 					if (class_exists("GMAPv3")) {
 						$chantier->pays = GMAPv3::getCountryFromLatLng($chantier->glat, $chantier->glng)->long_name;
@@ -208,6 +211,9 @@ class aplModelImportV2Chantiers extends JModelList
 				//$chantier->fiche_info = ($chantier->fiche_info != '' ? "images/apl".$chantier->fiche_info : "");
 				//$chantier->fiche_inscription = ($chantier->fiche_inscription != '' ? "images/apl".$chantier->fiche_inscription : "");
 				//$chantier->fiche_custom = ($chantier->fiche_custom != '' ? "images/apl".$chantier->fiche_custom : "");
+				$chantier->fiche_info = "";
+				$chantier->fiche_inscription = "";
+				$chantier->fiche_custom = "";
 				// on supprime les attributs de trop
 				unset($chantier->Glat);
 				unset($chantier->Glng);

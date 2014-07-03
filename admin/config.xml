@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
+	<!-- modal to select an article @see @url http://stackoverflow.com/questions/11681966/joomla-article-link-on-a-module-parameter -->
+	<fieldset
+		name="site" label="COM_APL_SETTINGS_SITE_LABEL" description="COM_APL_SETTINGS_SITE_DESC"
+		addfieldpath="/administrator/components/com_content/models/fields">
+		<field 
+			name="faq-tag-vpn" type="modal_article" 
+			label="COM_APL_SETTINGS_SITE_TAGVPN_ARTICLE_LABEL" description="COM_APL_SETTINGS_SITE_TAGVPN_ARTICLE_DESC"
+			required="true"
+		/>
+	</fieldset>
 	<fieldset
 		name="map"
 		label="COM_APL_MAP_SETTINGS_LABEL"

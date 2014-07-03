@@ -1,3 +1,10 @@
+REUNION du 01/07/2014
+=====================
+-> afficher le picto VPN dès la liste des chantiers
+-> trouver des pictos pour [COMPLET] et [TEST]
+-> problème de GoogleMap API KEY chez Marielle et Marion
+-> chantier: bug du saut de ligne (Dans le corps de texte des chantiers : les sauts de ligne dans la partie admin n'apparaissent pas sur le site en ligne (du coup ça fait des blocs de texte))
+
 REUNION du 14/05/2014
 =====================
 -> language : COM_APL_CHANTIER_CUSTOM	[OK]
@@ -5,8 +12,8 @@ REUNION du 14/05/2014
 -> détail du chantier -> afficher la griffe VPN avec tooltip + lien vers la FAQ "qu'est qu'un chantier VPN ?"
 -> fil d'ariane -> afficher "détail du chantier" au lieu du nom du chantier		[OK]
 -> édition du chantier -> bug lorsqu'on écrit une adresse, il créé un nouveau marker à chaque fois	[OK]
--> ouvrir et enregistrer les chantiers qui n'ont pas de code pays -> tout réimporter dimanche 25
--> basculer www.apasdeloup.org vers www.volontairesnature.org (dimanche 25)
+-> ouvrir et enregistrer les chantiers qui n'ont pas de code pays -> tout réimporter dimanche 25 -> OK
+-> basculer www.apasdeloup.org vers www.volontairesnature.org (dimanche 25) -> OK
 
 REUNION du 16/04/2014
 =====================
