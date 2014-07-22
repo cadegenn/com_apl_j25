@@ -12,7 +12,7 @@
 	sql:
 	. ajout du champs "vpn" à la table chantiers
 	site:
-	. chantier: enrobage de tous les div détails_chantier par un div 'main_content'
+	. chantier: enrobage de tous les div détails_chantier par un div 'vpn_content'
 
 @version 0.1.14 - @date 2014.05.18
 	admin:

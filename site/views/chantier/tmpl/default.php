@@ -126,7 +126,7 @@ if ((is_dir(getcwd().'/'.$PHOTOS_DIR))) { // and (mt_rand(0,1))) {
 	//$photo = "<img class='photo_chantier' src='".getcwd().'/'.$PHOTOS_DIR."' alt='photo_chantier.png' style='".$style."' />";
 	//$paragraph=3;
 ?>
-<div id='main_content'>
+<div id='vpn_content'>
 	<!-- DONNEES DU CHANTIER -->
 	<div class='detail_chantier'><h3><?php echo JText::_('COM_APL_CHANTIER_WHERE'); ?></h3>		<?php echo((($paragraph == 1) ? $photo : ""));	echo($this->chantier->lieu); ?></div>
 	<div class='detail_chantier'><h3><?php echo JText::_('COM_APL_CHANTIER_WHO'); ?></h3>		<?php echo((($paragraph == 2) ? $photo : ""));	echo(APLFunctions::mynl2br($this->chantier->organisateurs)); ?></div>
