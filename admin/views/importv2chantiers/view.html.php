@@ -43,7 +43,7 @@ class aplViewImportV2Chantiers extends JView
 		$this->imported = $imported;
 		$this->pagination = $pagination;
 
-			// Set the toolbar
+		// Set the toolbar
 		$this->addToolBar();
 		
 		// Ajouter le sous menu

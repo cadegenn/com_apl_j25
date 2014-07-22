@@ -4,6 +4,10 @@
 	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
 	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
 
+@version 0.1.16 - @date 2014.07.22
+	site:
+	. chantiers: affichage des options de publication dans un ul "actions" à la méthode Joomla!
+
 @version 0.1.15 - @date 2014.07.03
 	admin:
 	. chantier: ajout du champs "vpn" à la page d'édition du chantier

@@ -92,7 +92,26 @@ window.onload = loadScript;
 <?php foreach($this->chantier as $i => $item) : ?>
 	<?php //echo("<pre>");var_dump($item); echo("</pre>"); ?>
 	<div class='chantier_preview'>
-		<input type="button" class="btn_right" onclick="localiser(<?php echo $item->glat; ?>, <?php echo $item->glng; ?>);" value="Localiser">
+		<ul class="action_tag">
+				<li><!-- empty li to force "localize" to display correctly --></li>
+			<?php if ($item->complet) : ?>
+				<li class='action_tag_complet' title="<?php echo JText::_('COM_APL_CHANTIER_COMPLET_TOOLTIP'); ?>">[C]<!--<a href="#"><img src="<?php echo JURI::base(); ?>components/com_apl/images/ico-16x16/complet.png" alt="<?php echo JText::_('COM_APL_CHANTIER_COMPLET_TOOLTIP'); ?>" title="<?php echo JText::_('COM_APL_CHANTIER_COMPLET_TOOLTIP'); ?>" /></a>--></li>
+			<?php else: ?>
+				<li><!-- empty li to force 16px space --></li>
+			<?php endif; ?>
+			<?php if ($item->test) : ?>
+				<li class='action_tag_test' title="<?php echo JText::_('COM_APL_CHANTIER_TEST_TOOLTIP'); ?>">[T]<!--<a href="#"><img src="<?php echo JURI::base(); ?>components/com_apl/images/ico-16x16/test.png" alt="<?php echo JText::_('COM_APL_CHANTIER_TEST_TOOLTIP'); ?>" title="<?php echo JText::_('COM_APL_CHANTIER_TEST_TOOLTIP'); ?>" /></a>--></li>
+			<?php else: ?>
+				<li><!-- empty li to force 16px space --></li>
+			<?php endif; ?>
+			<?php if ($item->vpn) : ?>
+				<!-- CHANTIER VPN -->
+				<li class='action_tag_vpn'><a href="<?php echo JRoute::_('index.php?option=com_content&view=article&id='.$params->get("faq-tag-vpn").''); ?>"><img src="<?php echo JURI::base(); ?>components/com_apl/images/ico-16x16/apl.png" alt="<?php echo JText::_('COM_APL_CHANTIER_VPN_TOOLTIP'); ?>" title="<?php echo JText::_('COM_APL_CHANTIER_VPN_TOOLTIP'); ?>" /></a></li>
+			<?php else: ?>
+				<li><!-- empty li to force 16px space --></li>
+			<?php endif; ?>
+		</ul>
+		<input type="button" class="btn_localiser" onclick="localiser(<?php echo $item->glat; ?>, <?php echo $item->glng; ?>);" value="Localiser">
 		<a href='index.php?option=com_apl&view=chantier&id=<?php echo $item->id; ?>&Itemid=<?php echo JRequest::getVar('Itemid', 0, 'get','int'); ?>'><?php echo $item->nom; ?></a>
 		<?php if ($item->sous_titre != '') : ?>
 			<em>- <?php echo $item->sous_titre; ?></em>
@@ -103,12 +122,6 @@ window.onload = loadScript;
 		<br />
 		<span><?php echo $item->lieu; ?></span><br />
 		<img src='<?php echo $this->baseurl."/templates/".$template; ?>/images/ico_16x16/calendar.png' alt='date' /><?php echo APLFunctions::read_date_as_human($item->date_debut, $item->date_fin, $item->date_exacte); ?> <br />
-		<?php if ($item->complet) : ?>
-			<span class='complet'>[COMPLET]</span>
-		<?php endif; ?>
-		<?php if ($item->test) : ?>
-			<span class='test'>[EN TEST]</span>
-		<?php endif; ?>
 	</div>
 <?php endforeach; ?>
 </div>
