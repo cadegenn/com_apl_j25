@@ -60,7 +60,7 @@ window.onload = loadScript;
 <p>
 	<?php	// c'est crado d'écrire les URL en dur, ainsi que la liste des catégories... à améliorer à l'avenir :
 			// ajouter des champs de label à la table des catégories ? ?>
-	<span class='apl'><?php echo JText::_('COM_APL'); ?></span> organise de nombreux chantiers en <a href='index.php?option=com_apl&view=chantiers&id=10&Itemid=486'>Rh&ocirc;ne-Alpes</a>, en <a href='index.php?option=com_apl&view=chantiers&id=20&Itemid=487'>France</a>, et &agrave; <a href='index.php?option=com_apl&view=chantiers&id=999&Itemid=488'>l'&Eacute;tranger</a>.
+	<span class='apl'><?php echo JText::_('COM_APL'); ?></span> organise de nombreux chantiers en <a href='index.php?option=com_apl&view=chantiers&id=10&Itemid=486'>Rh&ocirc;ne-Alpes</a>, en <a href='index.php?option=com_apl&view=chantiers&id=20&Itemid=487'>France</a>, et &agrave; <a href='index.php?option=com_apl&view=chantiers&id=999&Itemid=488'>dans le monde</a>.
 </p>
 <div id='map_canvas'></div><br />
 
