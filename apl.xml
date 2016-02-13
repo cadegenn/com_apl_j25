@@ -10,7 +10,7 @@
 	<copyright>Copyright Info</copyright>
 	<license>AGPL v3</license>
 	<!--  The version string is recorded in the components table -->
-	<version>0.1.16</version> <!-- à modifier aussi dans admin/language/**-??/**-??.com_apl.ini -->
+	<version>0.1.17</version> <!-- à modifier aussi dans admin/language/**-??/**-??.com_apl.ini -->
 	<!-- The description is optional and defaults to the name -->
 	<description>COM_APL_COMPONENT_DESCRIPTION</description>
 	

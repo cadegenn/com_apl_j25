@@ -4,6 +4,9 @@
 	=> avoir 3 méthodes différentes ? updateMarkerAddress(), updateMarkerTitle(), updateMarkerInfo() ?
 	=> createMarkerFromLatLng(): supprimer le dernier argument DEPRECATED addOverlay
 
+@version 0.1.17 - @date 2016.02.13
+	site: mappemonde: changer le label pour l'étranger
+
 @version 0.1.16 - @date 2014.07.22
 	site:
 	. chantiers: affichage des options de publication dans un ul "actions" à la méthode Joomla!

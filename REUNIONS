@@ -1,8 +1,8 @@
 REUNION du 01/07/2014
 =====================
--> afficher le picto VPN dès la liste des chantiers
+-> afficher le picto VPN dès la liste des chantiers			[OK]
 -> trouver des pictos pour [COMPLET] et [TEST]
--> problème de GoogleMap API KEY chez Marielle et Marion
+-> problème de GoogleMap API KEY chez Marielle et Marion	[OK] (différence d'accès en www.vpn.org ou directement vpn.org)
 -> chantier: bug du saut de ligne (Dans le corps de texte des chantiers : les sauts de ligne dans la partie admin n'apparaissent pas sur le site en ligne (du coup ça fait des blocs de texte))
 
 REUNION du 14/05/2014
