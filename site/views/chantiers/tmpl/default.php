@@ -62,7 +62,7 @@ window.addEvent('domready',function(){
 		case 'googlemap-v3'	: ?>
 			/*var script = document.createElement("script");
 			script.type = "text/javascript";
-			script.src = "http://maps.googleapis.com/maps/api/js?key=<?php echo $GOOGLEMAP_API_KEY; ?>&sensor=false&callback=initialize";
+			script.src = "http://maps.googleapis.com/maps/api/js?key=<?php echo $GOOGLEMAP_API_KEY; ?>&callback=initialize";
 			document.body.appendChild(script);*/
 			//loadScript();
 		<?php break;

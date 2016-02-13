@@ -7,7 +7,7 @@ class GMAPv3{
 	/*
 	 * url of google geocode api
 	 */
-	static private $url = "http://maps.google.com/maps/api/geocode/json?sensor=false";
+	static private $url = "http://maps.google.com/maps/api/geocode/json?";
 	/*
 	 * error_message returned by query
 	 */
