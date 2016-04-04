@@ -230,10 +230,10 @@ function updateCurrentMarker() {
 			//if (!geocoder) { return; }
 			/*geocoder.geocode({'address': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					console.log(funcName+"(): found address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
+//					console.log(funcName+"(): found address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
 					createMarkerFromLatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng(), '', titre, desc, null, true, true);
 				} else {
-					console.log(funcName+"(): Geocoder failed due to: " + status);
+//					console.log(funcName+"(): Geocoder failed due to: " + status);
 				}
 			});*/
 			var url = "http://nominatim.openstreetmap.org/search?format=json&addressdetails=1&q="+address.replace(/ /,"+");
@@ -297,17 +297,17 @@ function markerExists(coord) {
  * @return	marker	si un marker est trouvé, sinon false
  */
 function getMarker(coord) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
-	//console.log(funcName+"(): markers.length = " + markers.length);
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
+//	//console.log(funcName+"(): markers.length = " + markers.length);
 	for (var i = 0; i < markers.length; i++) {
-		//console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
+//		//console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
 		//if (debug) { debug.innerHTML += dump(markers[i],0,1); }
 		//if (m.getPosition().lat() !== marker.getPosition().lat())
 		if (markers[i].getLatLng().equals(coord)) {
-			//console.log(funcName+"(): YES => return marker["+i+"]");
+//			//console.log(funcName+"(): YES => return marker["+i+"]");
 			return markers[i];
 		}
 	}
@@ -324,10 +324,10 @@ function getMarker(coord) {
  * 
  */
 function updateMarkerControls(glatLng) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
 
 	if (elementExist('jform_glat')) { document.getElementById('jform_glat').value = new Number(glatLng.lat).toPrecision(13); }
 	if (elementExist('jform_glng')) { document.getElementById('jform_glng').value = new Number(glatLng.lng).toPrecision(13); }

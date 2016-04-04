@@ -81,17 +81,17 @@ function initialize(glat, glng, zoomLevel, map_type) {
  */
 function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, draggable, addOverlay) {
 	//if (debug) { debug = document.getElementById("debug"); }
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);        // trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));        // trim off everything after the function name
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);        // trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));        // trim off everything after the function name
 	console.log(funcname);
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + dump(arguments,0,2) + "<br />"; }
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> check si le marker existe d&eacute;j&agrave;...<br />"; }
-	//if (debug) { console.log("["+funcName+"]:</span> check si le marker existe d&eacute;j&agrave;...<br />"); }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + dump(arguments,0,2) + "<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> check si le marker existe d&eacute;j&agrave;...<br />"; }
+//	//if (debug) { console.log("["+funcName+"]:</span> check si le marker existe d&eacute;j&agrave;...<br />"); }
 	if (markerExists(new GLatLng(glat, glng))) {
 		return getMarker(new GLatLng(glat, glng));
 	}
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Cr&eacute;ation du marker : createMarkerFromLatLng(" + glat + ", " + glng + ", '" + titre + "', '" + desc + "', '" + href + "', " + draggable + ");<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Cr&eacute;ation du marker : createMarkerFromLatLng(" + glat + ", " + glng + ", '" + titre + "', '" + desc + "', '" + href + "', " + draggable + ");<br />"; }
 	// options du marker
 	var mOptions = { 
 		title: html_entity_decode(titre),
@@ -103,10 +103,10 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 	var wOptions= {
 		maxwidth: 50
 	};
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Cr&eacute;ation du marker<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Cr&eacute;ation du marker<br />"; }
 	marker = new GMarker(new GLatLng(glat, glng), mOptions);
 	//map.addOverlay(marker);
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout de l'&eacute;vennement click<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout de l'&eacute;vennement click<br />"; }
 	GEvent.addListener(marker, "click",
 		function() {
 			this.openInfoWindowHtml("<div class='googlemap_info'><h3>" + titre + "</h3><p>" + desc + "</p><a href='" + href + "'>En savoir plus ...</a><br /><br /></div>", wOptions);
@@ -153,7 +153,7 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 				}
 			}
 		);
-		//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout de l'&eacute;vennement dragend<br />"; }
+//		//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout de l'&eacute;vennement dragend<br />"; }
 		// on update les controles � chaque d�placement du marker
 		GEvent.addListener(marker, "dragend",
 			function(coord) {
@@ -188,24 +188,24 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 			}
 		);
 	}
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout du marker au tableau<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout du marker au tableau<br />"; }
 	markers.push(marker);
 	if (addOverlay) {
 		map.addOverlay(marker);
 		map.setCenter(marker.getLatLng());
 	}
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> return du marker<br />"; }
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span><br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> return du marker<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span><br />"; }
 	return marker;
 }
 
 function updateMarkerFromLatLng(marker, glat, glng, categorie, titre, desc, href, draggable, addOverlay) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);        // trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));        // trim off everything after the function name
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> >> Entering function<br />"; }
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);        // trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));        // trim off everything after the function name
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> >> Entering function<br />"; }
 	if ((marker != null) && (markerExists(marker.getLatLng()))) {
-		//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Le marker n'existe pas...<br />"; }
+//		//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> Le marker n'existe pas...<br />"; }
 		// on r�cup�re tous les param�tres manquant, existant dans le marker actuel
 		if (isNull(glat)) { glat = marker.getLatLng().lat(); }
 		if (isNull(glng)) { glng = marker.getLatLng().lng(); }
@@ -215,12 +215,12 @@ function updateMarkerFromLatLng(marker, glat, glng, categorie, titre, desc, href
 			//return;
 			//map.getInfoWindow().show();
 			var infoWindow = map.getInfoWindow().getContentContainers();
-			//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + dump(infoWindow,0,1) + "<br />"; }
+//			//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + dump(infoWindow,0,1) + "<br />"; }
 			//desc = infoWindow[O].innerHTML;
 			desc = document.getElementById("googlemap_info_desc").innerHTML;
-			if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + desc + "<br />"; }
+//			if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> " + desc + "<br />"; }
 			//desc = infoWindow.getElementsByTagName("p")[0].innerHTML;
-			//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> desc = " + desc; }
+//			//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> desc = " + desc; }
 		}*/
 		if (isNull(href)) { href = location.href; }
 		if (isNull(draggable)) {
@@ -229,7 +229,7 @@ function updateMarkerFromLatLng(marker, glat, glng, categorie, titre, desc, href
 		// si le marker existe, on le supprime
 		removeMarker(marker);
 	}
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> << Leaving function<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> << Leaving function<br />"; }
 	return createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, draggable, addOverlay);
 }
 

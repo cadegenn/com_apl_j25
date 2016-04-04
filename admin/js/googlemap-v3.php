@@ -162,10 +162,10 @@ function centerMap(glat, glng) {
  * @param	addOverlay	vrai si on veut afficher le marker tout de suite, faux si on utilise un markerManager
  */
 function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, draggable, addOverlay) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	console.log(funcName+"()");
 
 	if (markerExists(new google.maps.LatLng(glat, glng))) {
 		return getMarker(new google.maps.LatLng(glat, glng));
@@ -208,7 +208,7 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 	//google.maps.event.trigger(marker, "dragend", newEvent);
 	updateMarkerControls(marker.getPosition());
 	
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout du marker au tableau<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> ajout du marker au tableau<br />"; }
 	markers.push(marker);
 	//console.log(markers);
 	/*if (addOverlay) {
@@ -216,8 +216,8 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
 		map.setCenter(marker.getPosition());
 	}*/
 	
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> return du marker<br />"; }
-	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span><br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span> return du marker<br />"; }
+//	//if (debug) { debug.innerHTML += "<span class='debug_funcname'>["+funcName+"]:</span><br />"; }
 	return marker;
 }
 
@@ -228,10 +228,10 @@ function createMarkerFromLatLng(glat, glng, categorie, titre, desc, href, dragga
  * @return	true si le marker existe, false autrement
  */
 function markerExists(coord) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	console.log(funcName+"()");
 	//if (debug) { debug.innerHTML += dump(markers,0,1); }
 	//if (markers.length == 0) { return false; }
 	for (var i = 0; i < markers.length; i++) {
@@ -249,17 +249,17 @@ function markerExists(coord) {
  * @return	(object)				marker if found | false otherwise
  */
 function getMarker(gLatLng) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	console.log(funcName+"()");
-	//console.log(funcName+"(): markers.length = " + markers.length);
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	console.log(funcName+"()");
+//	//console.log(funcName+"(): markers.length = " + markers.length);
 	for (var i = 0; i < markers.length; i++) {
-		console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
+//		console.log(funcName+"(): marker["+i+"] : "+markers[i].getPosition()+" =? "+gLatLng);
 		//if (debug) { debug.innerHTML += dump(markers[i],0,1); }
 		//if (m.getPosition().lat() !== marker.getPosition().lat())
 		if (markers[i].getPosition().equals(gLatLng)) {
-			console.log(funcName+"(): YES => return marker["+i+"]");
+//			console.log(funcName+"(): YES => return marker["+i+"]");
 			return markers[i];
 		}
 	}
@@ -281,16 +281,16 @@ function getMarker(gLatLng) {
  * 
  */
 function updateMarkerFromLatLng(marker, glat, glng, categorie, titre, desc, href, draggable, addOverlay) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
 
 	if (glat && glng) {
 		marker.setPosition(new google.maps.LatLng(glat, glng));
 	}
-	//console.log(funcName+"(): marker: "+marker);
-	console.log(funcName+"(): updating infowindow with content : "+titre+" - "+desc+" - "+href);
+//	//console.log(funcName+"(): marker: "+marker);
+//	console.log(funcName+"(): updating infowindow with content : "+titre+" - "+desc+" - "+href);
 	marker.content = "<div class='googlemap_info'><h3>" + titre + "</h3><p>" + desc + "</p><a href='" + href + "'>En savoir plus ...</a><br /><br /></div>";
 	//infowindow.setContent(marker.content);
 
@@ -322,20 +322,20 @@ function updateMarkerFromLatLng(marker, glat, glng, categorie, titre, desc, href
  * 
  */
 function updateMarker(marker, address, categorie, titre, desc, href, draggable, addOverlay) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
 
 	if (address != "") {
 		// translation en glatlng pour afficher le marker
 		//if (!geocoder) { return; }
 		geocoder.geocode({'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				console.log(funcName+"(): found new address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
+//				console.log(funcName+"(): found new address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
 				updateMarkerFromLatLng(marker, results[0].geometry.location.lat(), results[0].geometry.location.lng(), categorie, titre, desc, href, draggable, addOverlay);
 			} else {
-				console.log(funcName+"(): Geocoder failed due to: " + status);
+//				console.log(funcName+"(): Geocoder failed due to: " + status);
 			}
 		});
 	}
@@ -348,10 +348,10 @@ function updateMarker(marker, address, categorie, titre, desc, href, draggable, 
  * @return void
  */
 function updateMarkerControls(glatLng) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
 
 	if (elementExist('jform_glat')) { document.getElementById('jform_glat').value = new Number(glatLng.lat()).toPrecision(13); }
 	if (elementExist('jform_glng')) { document.getElementById('jform_glng').value = new Number(glatLng.lng()).toPrecision(13); }
@@ -366,7 +366,7 @@ function updateMarkerControls(glatLng) {
 					var found=false; var i=0;
 					var countryName = "";
 					while (!found) {
-						//console.log(funcName+"(): results[1].address_components["+i+"].types[0] = "+results[1].address_components[i].types[0]);
+//						//console.log(funcName+"(): results[1].address_components["+i+"].types[0] = "+results[1].address_components[i].types[0]);
 						//console.log(results[1].address_components[i].types[0]);
 						if (results[1].address_components[i].types[0] == "country") {
 							countryName = results[1].address_components[i].long_name;
@@ -403,11 +403,11 @@ function updateMarkerControls(glatLng) {
  * @return void
  */
 function updateMapControls(glatLng, zoomLevel, mapType) {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
-	//console.log(funcName+"(): zoomLevel = " + zoomLevel + " / new_mapType = " + new String(mapType).toUpperCase());
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
+//	//console.log(funcName+"(): zoomLevel = " + zoomLevel + " / new_mapType = " + new String(mapType).toUpperCase());
 
 	if (elementExist('jform_mapGlat')) { document.getElementById('jform_mapGlat').value = new Number(glatLng.lat()).toPrecision(13); }
 	if (elementExist('jform_mapGlng')) { document.getElementById('jform_mapGlng').value = new Number(glatLng.lng()).toPrecision(13); }
@@ -418,10 +418,10 @@ function updateMapControls(glatLng, zoomLevel, mapType) {
 }
 
 function updateCurrentMarker() {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	console.log(funcName+"()");
 	/*
 	address = document.getElementById('jform_lieu').value;
 	categorie = document.getElementById('jform_catid').value;
@@ -435,12 +435,12 @@ function updateCurrentMarker() {
 	new_address = document.getElementById('jform_adresse').value;
 	new_titre = document.getElementById('jform_nom').value;
 	new_desc = document.getElementById('jform_actions').value.replace(/\n/g,"<br \/>");
-	console.log("%s(): current_glat = %f / current_glng = %f", funcName, current_glat, current_glng);
+//	console.log("%s(): current_glat = %f / current_glng = %f", funcName, current_glat, current_glng);
 	// goecode adress into valid glat/glng
 	//new_glatLng = geocodeAddress(new_address);
-	//console.log(funcName+"():" + new_glatLng);
+//	//console.log(funcName+"():" + new_glatLng);
 	var coords = new google.maps.LatLng(current_glat, current_glng);
-	console.log("%s(): %o", funcName, coords);
+//	console.log("%s(): %o", funcName, coords);
 	var currentMarker = getMarker(coords);
 	if (currentMarker == false) {
 		if (new_address != "") {
@@ -448,10 +448,10 @@ function updateCurrentMarker() {
 			//if (!geocoder) { return; }
 			geocoder.geocode({'address': new_address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					console.log(funcName+"(): found address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
+//					console.log(funcName+"(): found address at latlng = "+results[0].geometry.location.lat() +", " +results[0].geometry.location.lng());
 					createMarkerFromLatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng(), '', new_titre, new_desc, null, true, true);
 				} else {
-					console.log(funcName+"(): Geocoder failed due to: " + status);
+//					console.log(funcName+"(): Geocoder failed due to: " + status);
 				}
 			});
 		}		
@@ -464,17 +464,17 @@ function updateCurrentMarker() {
  * 
  */
 function updateCurrentMap() {
-	var funcName = arguments.callee.toString();
-	funcName = funcName.substr('function '.length);				// trim off "function "
-	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
-	//console.log(funcName+"()");
+//	var funcName = arguments.callee.toString();
+//	funcName = funcName.substr('function '.length);				// trim off "function "
+//	funcName = funcName.substr(0, funcName.indexOf('('));		// trim off everything after the function name
+//	//console.log(funcName+"()");
 	
 	new_zoomLevel = parseFloat(document.getElementById('jform_zoomLevel').value);
 	//new_zoomLevel = new Number(document.getElementById('jform_zoomLevel').value);
 	//new_mapType = document.getElementById('jform_mapType').value;
 	new_mapType = new String(document.getElementById('jform_mapType').value).toLowerCase();
 	//new_mapType = "google.maps.MapTypeId."+document.getElementById('jform_mapType').value;
-	//console.log(funcName+"(): zoomLevel = " + new_zoomLevel + " / new_mapType = " + new_mapType);
+//	//console.log(funcName+"(): zoomLevel = " + new_zoomLevel + " / new_mapType = " + new_mapType);
 	
 	var mapOptions = {
 		zoom: new_zoomLevel,
