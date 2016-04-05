@@ -20,7 +20,7 @@ $API_KEY=$params->get("googlemap_apikey");
  */
 ?>
 
-<script src="http://maps.googleapis.com/maps/api/js?key=<?php echo $API_KEY; ?>&callback=initialize"></script>
+<script async defer src="http://maps.googleapis.com/maps/api/js?key=<?php echo $API_KEY; ?>&callback=initialize"></script>
 
 <script type="text/javascript">
 // google map v3
